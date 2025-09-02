@@ -1,0 +1,30 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional)
+.vscode/
+
+# Logs and debug files
+*.log
+
+# SQLite or other local DB files (if used)
+*.sqlite3
+
+# Node modules (if you ever add frontend tooling)
+node_modules/
+
+# Compiled files and build artifacts
+*.egg-info/
+dist/
+build/

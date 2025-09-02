@@ -1,0 +1,219 @@
+html, body {
+  background: url("images/Pizza_food.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  color: black;
+  font-weight: lighter;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  position: relative;
+  height: 100%;
+  
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25) no-repeat;
+  z-index: 0;
+  pointer-events: none;
+
+}
+
+.header {
+  background: rgba(33, 147, 176, 0.85);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 1;
+
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  z-index: 1;
+
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  z-index: 1;
+
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 0 1rem;
+  z-index: 1;
+
+}
+
+.search-box {
+  margin-bottom: 2rem;
+  z-index: 1;
+
+}
+
+.search-box label {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-right: 120px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  z-index: 1;
+
+}
+
+.search-box input {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 60%;
+  height: 60%;
+  max-width: 400px;
+  outline: none;
+  transition: 0.3s;
+  z-index: 1;
+
+}
+
+input:focus {
+  border-color: #116e86;
+  box-shadow: 0 0 8px rgba(33,147,176,1.0);
+
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+
+}
+
+.btn-primary {
+  background: #2193b0;
+  color: white;
+  z-index: 1;
+
+}
+
+.btn-primary:hover {
+  background: #19718e;
+  box-shadow: 0 0 15px #4a90e2;
+  transform: scale(1.05);
+
+}
+
+.btn-secondary {
+  background: #2193b0;
+  color: white;
+  margin-right: 50px;
+  z-index: 1;
+
+}
+
+.btn-secondary:hover {
+  background: #2193b0;
+  box-shadow: 0 0 15px #4a90e2;
+  transform: scale(1.05);
+
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  z-index: 1;
+
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 450px;
+  font-size: 1.2rem;
+  text-shadow: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1;
+
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+
+}
+
+.nav-buttons {
+  margin-top: 2rem;
+  z-index: 1;
+
+}
+
+.search-message {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  margin-top: 20px;
+  z-index: 1;
+
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .search-box input { width: 70%; font-size: 0.95rem; }
+  .card { width: 350px; font-size: 1rem; }
+  .header h1 { font-size: 2rem; }
+  .header p { font-size: 1rem; }
+  button { font-size: 0.9rem; padding: 0.6rem 1rem; }
+
+}
+
+/* Small Tablets / Large Phones */
+@media (max-width: 768px) {
+  .search-box input { width: 80%; font-size: 0.9rem; }
+  .card { width: 300px; font-size: 0.95rem; }
+  .header h1 { font-size: 1.8rem; }
+  .header p { font-size: 0.95rem; }
+  button { font-size: 0.85rem; padding: 0.55rem 0.9rem; margin: 0.3rem; }
+
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .search-box label { font-size: 1.5rem; margin-right: 0; }
+  .search-box input { width: 90%; font-size: 0.85rem; }
+  .card { width: 90%; font-size: 0.9rem; }
+  .header h1 { font-size: 1.5rem; }
+  .header p { font-size: 0.85rem; }
+  button { font-size: 0.8rem; padding: 0.5rem 0.8rem; margin: 0.2rem; }
+
+}
+
+

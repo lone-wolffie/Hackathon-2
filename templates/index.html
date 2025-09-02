@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Recommender 🍲</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>Recipe Recommender 🍲</h1>
+    <p>Discover tasty recipes with the ingredients you already have 🤤</p>
+  </header>
+
+  <!-- Search Section -->
+  <main class="container">
+    <div class="search-box">
+      <label for="ingredients">Type in the ingredients you have:</label>
+      <input type="text" id="ingredientsInput" placeholder="e.g. rice, spinach, eggs">
+      <button id="searchBtn" class="btn-primary">Get Recipes</button>
+    </div>
+
+    <!-- Recipe Cards -->
+    <div id="recipeCards" class="cards-container"></div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons">
+      <button id="prevBtn" class="btn-secondary">Previous Recipe</button> 
+      <button id="nextBtn" class="btn-secondary">Next Recipe</button>
+    </div>
+
+    <!-- Payment Section -->
+    <section class="payment">
+      <h2 style="color: white; font-weight: bolder; font-size: 2rem;">Support This Project ❤️</h2>
+      <button id="payBtn" class="btn-primary">Pay KES 100</button>
+    </section>
+  </main>
+
+  
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  <script>
+    // Handles pay button click
+    document.getElementById("payBtn").addEventListener("click", async () => {
+      try {
+        let response = await fetch("/pay", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount: 100, currency: "KES" })
+        });
+
+        let data = await response.json();
+        if (data.checkout_url) {
+          window.location.href = data.checkout_url; // redirect to IntaSend checkout
+        } else {
+          alert("Payment initiation failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Payment error:", error);
+        alert("Error occurred while processing payment.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -32,8 +32,8 @@ AI-powered recipe recommendation web app that suggests delicious recipes based o
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/recipe-recommender.git
-cd recipe-recommender 
+git clone https://github.com/lone-wolffie/Hackathon-2.git
+cd Hackathon-2
 ```
 
 2️⃣ Set up a virtual environment
